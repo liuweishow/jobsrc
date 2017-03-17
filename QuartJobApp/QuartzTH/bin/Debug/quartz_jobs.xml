@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <job>
+        <name>FirstJob0</name>
+        <group>THGroup</group>
+        <description>First job for Quartz Server</description>
+        <job-type>QuartzTH.FirstJob0, QuartzTH</job-type>
+        <durable>true</durable>
+        <recover>false</recover>
+    </job>
+
+    <trigger>
+      <simple>
+        <name>FirstJob0Trigger</name>
+        <group>THGroup</group>
+        <description>First trigger to simply fire first job</description>
+        <job-name>FirstJob0</job-name>
+        <job-group>THGroup</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>-1</repeat-count>
+        <repeat-interval>1000</repeat-interval>
+      </simple>
+    </trigger>
+  
+  
+
+    <job>
+        <name>FirstJob1</name>
+        <group>THGroup1</group>
+        <description>First job for Quartz Server</description>
+        <job-type>QuartzTH.FirstJob1, QuartzTH</job-type>
+        <durable>false</durable>
+        <recover>false</recover>
+    </job>
+
+    <trigger>
+      <simple>
+        <name>FirstJob1Trigger</name>
+        <group>THGroup1</group>
+        <description>First trigger to simply fire first job</description>
+        <job-name>FirstJob1</job-name>
+        <job-group>THGroup1</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>-1</repeat-count>
+        <repeat-interval>1000</repeat-interval>
+      </simple>
+    </trigger>
+  </schedule>
+
+</job-scheduling-data>
